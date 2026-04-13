@@ -1,0 +1,16 @@
+{
+  "name": "liquid-glass",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Real optical refraction for the web. No dependencies. Copy one file.",
+  "scripts": {
+    "dev": "vite demo",
+    "build": "node build.mjs",
+    "preview": "vite preview demo"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0",
+    "typescript": "^5.8.0",
+    "vite": "^6.3.0"
+  }
+}

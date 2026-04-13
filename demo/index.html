@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Liquid Glass</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Background content that shows through the glass -->
+  <div class="backdrop">
+    <div class="backdrop-gradient"></div>
+    <div class="backdrop-grid"></div>
+    <div class="backdrop-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="shape shape-4"></div>
+      <div class="shape shape-5"></div>
+    </div>
+    <div class="backdrop-center">
+      <p class="backdrop-text">Liquid Glass</p>
+      <a class="backdrop-credit" href="https://x.com/rizroze" target="_blank" rel="noopener">
+        <img src="rose.svg" alt="" class="backdrop-credit-rose" />
+        <span>by Riz Roze</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- The glass element -->
+  <div class="glass-container">
+    <div class="glass-element" id="glass">
+      <span class="glass-label">drag me around</span>
+    </div>
+  </div>
+
+  <!-- Config panel -->
+  <div class="config-panel" id="config">
+    <div class="config-header">
+      <h2>Config</h2>
+      <button class="config-toggle" id="toggle-panel" aria-label="Toggle config panel">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+    <div class="config-body" id="config-body">
+      <!-- Essential controls -->
+      <div class="config-group">
+        <label>Scale <span class="config-value" id="val-scale">-180</span></label>
+        <input type="range" id="opt-scale" min="-300" max="-20" value="-180" step="10" />
+      </div>
+      <div class="config-group">
+        <label>Border Radius <span class="config-value" id="val-borderRadius">50</span></label>
+        <input type="range" id="opt-borderRadius" min="0" max="100" value="50" step="1" />
+      </div>
+      <div class="config-group">
+        <label>Edge Blur <span class="config-value" id="val-blur">11</span></label>
+        <input type="range" id="opt-blur" min="0" max="30" value="11" step="1" />
+      </div>
+      <div class="config-group">
+        <label>Width <span class="config-value" id="val-width">400</span></label>
+        <input type="range" id="opt-width" min="100" max="800" value="400" step="10" />
+      </div>
+      <div class="config-group">
+        <label>Height <span class="config-value" id="val-height">80</span></label>
+        <input type="range" id="opt-height" min="40" max="400" value="80" step="10" />
+      </div>
+
+      <!-- Advanced toggle -->
+      <button class="config-advanced-toggle" id="toggle-advanced">Advanced</button>
+
+      <!-- Advanced controls (hidden by default) -->
+      <div class="config-advanced" id="advanced-body">
+        <div class="config-group">
+          <label>Border <span class="config-value" id="val-border">0.07</span></label>
+          <input type="range" id="opt-border" min="0" max="0.3" value="0.07" step="0.01" />
+        </div>
+        <div class="config-group">
+          <label>Lightness <span class="config-value" id="val-lightness">50</span></label>
+          <input type="range" id="opt-lightness" min="0" max="100" value="50" step="1" />
+        </div>
+        <div class="config-group">
+          <label>Alpha <span class="config-value" id="val-alpha">0.93</span></label>
+          <input type="range" id="opt-alpha" min="0" max="1" value="0.93" step="0.01" />
+        </div>
+        <div class="config-group">
+          <label>Frost <span class="config-value" id="val-frost">0</span></label>
+          <input type="range" id="opt-frost" min="0" max="0.5" value="0" step="0.01" />
+        </div>
+        <div class="config-group">
+          <label>Saturation <span class="config-value" id="val-saturation">1</span></label>
+          <input type="range" id="opt-saturation" min="0" max="3" value="1" step="0.1" />
+        </div>
+        <div class="config-group">
+          <label>Aberration R <span class="config-value" id="val-aberR">0</span></label>
+          <input type="range" id="opt-aberR" min="-40" max="40" value="0" step="1" />
+        </div>
+        <div class="config-group">
+          <label>Aberration G <span class="config-value" id="val-aberG">10</span></label>
+          <input type="range" id="opt-aberG" min="-40" max="40" value="10" step="1" />
+        </div>
+        <div class="config-group">
+          <label>Aberration B <span class="config-value" id="val-aberB">20</span></label>
+          <input type="range" id="opt-aberB" min="-40" max="40" value="20" step="1" />
+        </div>
+      </div>
+
+      <button class="config-reset" id="reset">Reset</button>
+    </div>
+    <div class="browser-notice" id="browser-notice" style="display:none">
+      Your browser doesn't support the full displacement effect. Try Chrome, Edge, Arc, or Brave to see the real thing.
+    </div>
+  </div>
+
+  <!-- Quick start snippet -->
+  <div class="code-snippet" id="code-snippet">
+    <div class="code-header">
+      <span class="code-label">Quick start</span>
+      <button class="code-copy" id="copy-btn">Copy</button>
+    </div>
+    <pre><code>// 1. Copy core/liquid-glass.js into your project
+// 2. Import and use:
+import { createLiquidGlass } from './liquid-glass.js'
+const glass = createLiquidGlass(document.querySelector('.my-element'))</code></pre>
+  </div>
+
+  <script type="module" src="main.ts"></script>
+</body>
+</html>
