@@ -176,6 +176,20 @@ body {
   transition: color 0.3s var(--smooth);
 }
 
+.backdrop-credit-check {
+  width: 16px;
+  height: 16px;
+  opacity: 0;
+  transform: scale(0.5) translateX(-4px);
+  transition: opacity 0.3s var(--smooth), transform 0.4s var(--bounce);
+  flex-shrink: 0;
+}
+
+.backdrop-credit:hover .backdrop-credit-check {
+  opacity: 1;
+  transform: scale(1) translateX(0);
+}
+
 /* ---- Glass element ---- */
 
 .glass-container {
