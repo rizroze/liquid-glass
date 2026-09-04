@@ -2,7 +2,7 @@
 
 Real optical refraction for the web. Not just `backdrop-filter: blur()` — actual displacement-based light bending with chromatic aberration. Zero dependencies. Copy one file.
 
-**[Live Demo](https://liquid-glass.vercel.app)**
+**[Live Demo](https://rizzy.today/liquid-glass/)**
 
 ## What it does
 
