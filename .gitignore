@@ -4,3 +4,6 @@ dist/
 .DS_Store
 *.log
 .vercel
+
+# built demo (Vercel builds this itself)
+demo/dist
