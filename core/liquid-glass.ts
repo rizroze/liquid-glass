@@ -7,7 +7,7 @@
  *
  * Chromium only. Safari/Firefox fall back to regular backdrop-filter: blur().
  *
- * @see https://github.com/rizroze/liquid-glass
+ * @see https://github.com/rizzytoday/liquid-glass
  * @license MIT
  */
 

@@ -21,7 +21,7 @@ const tsSource = readFileSync('core/liquid-glass.ts', 'utf-8')
 // Extract exported interfaces and the main function signature
 const dtsContent = `/**
  * Liquid Glass — Real optical refraction for the web.
- * @see https://github.com/rizroze/liquid-glass
+ * @see https://github.com/rizzytoday/liquid-glass
  * @license MIT
  */
 
