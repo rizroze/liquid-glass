@@ -1,6 +1,6 @@
 /**
  * Liquid Glass — Real optical refraction for the web.
- * @see https://github.com/rizzytoday/liquid-glass
+ * @see https://github.com/rizroze/liquid-glass
  * @license MIT
  */
 
